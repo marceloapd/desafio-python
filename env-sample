@@ -1,0 +1,5 @@
+DB_NAME=sangue-laranja
+DB_USER=mysql
+DB_PASSWORD=mysql
+DB_PORT=3306
+DB_HOST=desafio_python-mysql.com
