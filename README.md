@@ -1,7 +1,7 @@
-# Desafio Python #Sangue-Laranja 🍊
+# Desafio Python
 
-![GitHub repo size](https://img.shields.io/github/repo-size/marceloapd/Teste-IntuitiveCare?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/marceloapd/Teste-IntuitiveCare?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/marceloapd/desafio-python?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/marceloapd/desafio-python?style=for-the-badge)
 
 <img src="https://user-images.githubusercontent.com/71731452/191392162-0aac7698-bba3-4c01-918a-ccdcacee475e.gif" style="width:500px" alt="exemplo imagem">
 
@@ -13,9 +13,10 @@
 Sua tarefa é fazer uma aplicação que carregue a saida da URL https://jsonplaceholder.typicode.com/users , que retorna uma lista de usuário em JSON.
 
 Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
-    
-- Os websites de todos os usuários
 
+<details>
+<summary>Os websites de todos os usuários</summary>
+<pre>
         GET /users/websites
         {
             "websites": [
@@ -29,9 +30,12 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
             ]
         }
 
+</pre>
+</details>    
 
-- O Nome, email e a empresa em que trabalha (em ordem alfabética)
-
+<details>
+<summary>O Nome, email e a empresa em que trabalha (em ordem alfabética)</summary>
+<pre>
         GET /users/detail
         {
             "users": [
@@ -49,9 +53,12 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
             ]
         }
 
+</pre>
+</details>  
 
-- Mostrar todos os usuarios que contenham determinado texto no nome.
-
+<details>
+<summary>Mostrar todos os usuarios que contenham determinado texto no nome</summary>
+<pre>
         GET /users?name=Graham
         {
             "users": [
@@ -61,7 +68,9 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
                 }
             ]
         }
-    
+
+</pre>
+</details>  
 
 ## 💻 Extras
 
@@ -74,3 +83,18 @@ Os problema deverão ser resolvido em uma (ou mais) das seguintes linguagens:
 
 - Docker
 - Redis
+
+## 👷 Arquitetura
+
+![Featured_Image](https://user-images.githubusercontent.com/71731452/191395190-e2a83ced-fb8c-4229-b692-e16c6d9a4d7e.png)
+
+## 🔩 Requisitos
+> Antes de começar, verifique se você atendeu aos seguintes requisitos:
+
+- Docker
+- Docker Compose
+
+## 🧪 Testando
+> Use essa collection para testar no postman
+
+https://drive.google.com/file/d/1FbGP0p0thw71KsyhTXfxvL1wmJ57M485/view?usp=sharing
