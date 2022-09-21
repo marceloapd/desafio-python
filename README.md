@@ -1,8 +1,11 @@
-
 # Desafio Python #Sangue-Laranja 🍊
 
-O objetivo desse desafio é avaliar o conhecimento dos candidatos.  Não existe resolução certa ou errada, avaliaremos com o nível de experiência que for exigido pelas vagas disponíveis no momento. Envie o seu desafio mesmo que você não conclua todas as questões, avaliaremos tudo o que for enviado.
+![GitHub repo size](https://img.shields.io/github/repo-size/marceloapd/Teste-IntuitiveCare?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/marceloapd/Teste-IntuitiveCare?style=for-the-badge)
 
+<img src="https://user-images.githubusercontent.com/71731452/191392162-0aac7698-bba3-4c01-918a-ccdcacee475e.gif" style="width:500px" alt="exemplo imagem">
+
+> O objetivo desse desafio é avaliar o conhecimento dos candidatos. Não existe resolução certa ou errada, avaliaremos com o nível de experiência que for exigido pelas vagas disponíveis no momento. Envie o seu desafio mesmo que você não conclua todas as questões, avaliaremos tudo o que for enviado.
 
 ## Developer challenge
 
@@ -64,3 +67,15 @@ EXTRA:
 1. Criar teste unitário para validar os itens a cima.
 2. Adicionar validação via Authorization Header para acessar o recurso(Pode ser um token fixo, definido em uma variavel).
 
+
+## 💻 Extras
+
+Os problema deverão ser resolvido em uma (ou mais) das seguintes linguagens:
+
+- Criar teste unitário para validar os itens a cima;
+- Adicionar validação via Authorization Header para acessar o recurso(Pode ser um token fixo, definido em uma variavel).
+
+## 🚀 Implementações adicionais
+
+- Docker
+- Redis
