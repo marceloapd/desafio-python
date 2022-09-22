@@ -1,12 +1,9 @@
+import os
 from logging.config import fileConfig
 
-import os
 import dotenv
-
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
-
 from alembic import context
+from sqlalchemy import engine_from_config, pool
 
 dotenv.load_dotenv()
 
@@ -23,7 +20,7 @@ DB_PORT = os.getenv("DB_PORT", "5432")
 POSTGRES_DATABASE_URL = (
     f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
-config.set_main_option('sqlalchemy.url', POSTGRES_DATABASE_URL)
+config.set_main_option("sqlalchemy.url", POSTGRES_DATABASE_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -80,9 +77,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
