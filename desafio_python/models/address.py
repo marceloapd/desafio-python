@@ -1,6 +1,5 @@
 from sqlalchemy import (VARCHAR, Column, DateTime, Integer, UniqueConstraint,
                         text)
-from sqlalchemy.orm import relationship
 
 from .base import Base
 

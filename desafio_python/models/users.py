@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from .base import Base
 
 
-class User(Base):
+class Users(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
