@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from ..models.company import Company
 
 
-class Company:
+class CompanyRepository:
     def __init__(self, session_db: Session):
         self.session_db = session_db
 
