@@ -74,8 +74,6 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
 
 ## 💻 Extras
 
-Os problema deverão ser resolvido em uma (ou mais) das seguintes linguagens:
-
 - Criar teste unitário para validar os itens a cima;
 - Adicionar validação via Authorization Header para acessar o recurso(Pode ser um token fixo, definido em uma variavel).
 
