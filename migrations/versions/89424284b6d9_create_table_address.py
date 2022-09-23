@@ -1,16 +1,18 @@
 """create table address
 
-Revision ID: 607e51409bc8
-Revises: 7b9efa115217
-Create Date: 2022-09-21 21:37:33.187565
+Revision ID: 89424284b6d9
+Revises: ff2a744a7e15
+Create Date: 2022-09-22 20:30:07.489265
 
 """
-import sqlalchemy as sa
 from alembic import op
+import sqlalchemy as sa
+
+from sqlalchemy.dialects.postgresql import UUID
 
 # revision identifiers, used by Alembic.
-revision = "607e51409bc8"
-down_revision = "7b9efa115217"
+revision = '89424284b6d9'
+down_revision = 'ff2a744a7e15'
 branch_labels = None
 depends_on = None
 
@@ -18,10 +20,8 @@ depends_on = None
 def upgrade() -> None:
     op.create_table(
         "address",
-        sa.Column(
-            "id", sa.Integer(), nullable=False, primary_key=True, autoincrement=True
-        ),
-        sa.Column("user_id", sa.Integer(), nullable=False),
+        sa.Column("id", UUID(), nullable=False, primary_key=True),
+        sa.Column("api_id", sa.Integer(), nullable=False),
         sa.Column("street", sa.VARCHAR(50), nullable=False),
         sa.Column("suite", sa.VARCHAR(20), nullable=False),
         sa.Column("city", sa.VARCHAR(50), nullable=False),
@@ -35,8 +35,8 @@ def upgrade() -> None:
             default=sa.text("CURRENT_TIMESTAMP"),
         ),
     )
-    op.create_foreign_key("user_id_fk", "address", "users", ["user_id"], ["id"])
 
+    op.create_unique_constraint("uq_api_id_address", "address", ['api_id'])
 
 def downgrade() -> None:
     op.drop_table("address")

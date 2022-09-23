@@ -1,16 +1,18 @@
 """create table company
 
-Revision ID: 9469f707160e
-Revises: 607e51409bc8
-Create Date: 2022-09-21 21:42:20.690819
+Revision ID: ff2a744a7e15
+Revises: 
+Create Date: 2022-09-22 20:29:56.698733
 
 """
-import sqlalchemy as sa
 from alembic import op
+import sqlalchemy as sa
+
+from sqlalchemy.dialects.postgresql import UUID
 
 # revision identifiers, used by Alembic.
-revision = "9469f707160e"
-down_revision = "607e51409bc8"
+revision = 'ff2a744a7e15'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -18,9 +20,8 @@ depends_on = None
 def upgrade() -> None:
     op.create_table(
         "company",
-        sa.Column(
-            "id", sa.Integer(), nullable=False, primary_key=True, autoincrement=True
-        ),
+        sa.Column("id", UUID(), nullable=False, primary_key=True),
+        sa.Column("api_id", sa.Integer(), nullable=False),
         sa.Column("name", sa.VARCHAR(50), nullable=False),
         sa.Column("bs", sa.VARCHAR(50), nullable=False),
         sa.Column(
@@ -31,6 +32,7 @@ def upgrade() -> None:
         ),
     )
 
+    op.create_unique_constraint("uq_api_id_company", "company", ['api_id'])
 
 def downgrade() -> None:
     op.drop_table("company")
