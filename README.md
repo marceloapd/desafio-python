@@ -92,7 +92,20 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
 - Docker
 - Docker Compose
 
+## ⚙️ Configuração
+> Na pasta raiz, faça uma cópia do env-sample e renomeie-o para .env
+
+```
+cp env-sample .env
+```
+## 🏃 Rodando
+> Você só precisa executar os contêineres com o docker compose
+
+```
+docker compose up
+```
+
 ## 🧪 Testando
 > Use essa collection para testar no postman
 
-https://drive.google.com/file/d/1FbGP0p0thw71KsyhTXfxvL1wmJ57M485/view?usp=sharing
+link of collection
