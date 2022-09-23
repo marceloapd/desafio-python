@@ -1,4 +1,3 @@
-from typing import List
 
 from sqlalchemy.orm import Session
 
@@ -16,3 +15,13 @@ class AdressRepository:
             session.commit()
             session.refresh(address)
         return address
+
+    def bulk_create(self, address_data):
+        with self.session_db() as session:
+            for address in address_data:
+                address_obj = Address(**address)
+                try:
+                    session.merge(address_obj)
+                    session.commit()
+                except Exception as e:
+                    session.rollback()
