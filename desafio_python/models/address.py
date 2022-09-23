@@ -1,5 +1,5 @@
-from sqlalchemy import (VARCHAR, Column, DateTime, Integer, UniqueConstraint,
-                        text)
+from sqlalchemy import VARCHAR, Column, DateTime, Integer, text
+from sqlalchemy.dialects.postgresql import UUID
 
 from .base import Base
 
@@ -7,8 +7,8 @@ from .base import Base
 class Address(Base):
     __tablename__ = "address"
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False)
+    id = Column(UUID(), primary_key=True)
+    api_id = Column(Integer, nullable=False)
     street = Column(VARCHAR(50), nullable=False)
     suite = Column(VARCHAR(20), nullable=False)
     city = Column(VARCHAR(50), nullable=False)
