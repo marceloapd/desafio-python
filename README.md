@@ -95,8 +95,14 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
 ## ⚙️ Configuração
 > Na pasta raiz, faça uma cópia do env-sample e renomeie-o para .env
 
+Linux:
 ```
 cp env-sample .env
+```
+
+Windows:
+```
+copy env-sample .env
 ```
 ## 🏃 Rodando
 > Você só precisa executar os contêineres com o docker compose
