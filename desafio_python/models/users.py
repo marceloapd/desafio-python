@@ -1,6 +1,6 @@
 from sqlalchemy import VARCHAR, Column, DateTime, Integer, text, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
+from sqlalchemy_utils import UUIDType
 
 from .base import Base
 
@@ -15,8 +15,8 @@ class Users(Base):
     email = Column(VARCHAR(50), nullable=False)
     phone = Column(VARCHAR(30), nullable=False)
     website = Column(VARCHAR(50), nullable=False)
-    company_id = Column(UUID(), ForeignKey("company.id"))
-    address_id = Column(UUID(), ForeignKey("address.id"))
+    company_id = Column(UUIDType(), ForeignKey("company.id"))
+    address_id = Column(UUIDType(), ForeignKey("address.id"))
     created_at = Column(DateTime, nullable=False, default=text("CURRENT_TIMESTAMP"))
 
     company = relationship("Company", lazy="joined")
