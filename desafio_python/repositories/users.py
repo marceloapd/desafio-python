@@ -32,11 +32,11 @@ class UsersRepository:
     def get_users(self):
         with self.session_db() as session:
             return session.query(Users).all()
-    
+
     def get_users_by_order(self):
         with self.session_db() as session:
             return session.query(Users).order_by(desc(Users.name)).all()
-    
-    def     get_user_by_name(self, name):
+
+    def get_user_by_name(self, name):
         with self.session_db() as session:
-            return session.query(Users).filter(Users.name.match(f"%{name}%")).all()
+            return session.query(Users).filter(Users.name.like(f"%{name}%")).all()
