@@ -18,7 +18,7 @@ app.include_router(
 
 
 @app.on_event("startup")
-async def seed_db_event():
+def seed_db_event():
     api_response = requests.get("https://jsonplaceholder.typicode.com/users")
     if api_response.status_code != 200:
         raise ValueError("")
