@@ -8,8 +8,9 @@ def check_token(
     auth_service: AuthService = Depends(get_auth_service),
     authorization: str = Header(...),
 ):
+
     token = authorization.split(" ")
     if len(token) != 2:
-        raise HTTPException(404, "Invalid authorization")
+        raise HTTPException(403, "Invalid authorization")
     auth_service.verify_token(token[1])
     return
