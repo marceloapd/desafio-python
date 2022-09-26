@@ -1,0 +1,2 @@
+USERS_BY_NAME_KEY = "users:{}"
+ONE_HOUR = 3600
