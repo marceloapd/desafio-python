@@ -1,8 +1,6 @@
 from collections import defaultdict
 from uuid import uuid4
 
-import requests
-
 from ..configs.postgres import Database
 from ..repositories.address import AdressRepository
 from ..repositories.company import CompanyRepository
@@ -15,13 +13,10 @@ class ImportJsonplaceholder:
         self.address_repository = AdressRepository(postgres.session)
         self.company_repository = CompanyRepository(postgres.session)
 
-    def get_jsonplaceholder(self):
-        api_response = requests.get("https://jsonplaceholder.typicode.com/users")
-        if api_response.status_code != 200:
-            raise ValueError("")
+    def get_jsonplaceholder(self, api_response):
 
         data_to_bulk_save = defaultdict(list)
-        for data in api_response.json():
+        for data in api_response:
             company = data["company"]
             company_id = str(uuid4())
             company["id"] = company_id
@@ -35,7 +30,7 @@ class ImportJsonplaceholder:
                 "city": data["address"]["city"],
                 "zipcode": data["address"]["zipcode"],
                 "lat": data["address"]["geo"]["lat"],
-                "lng": data["address"]["geo"]["lng"]
+                "lng": data["address"]["geo"]["lng"],
             }
             address_id = str(uuid4())
             address["id"] = address_id
@@ -49,14 +44,13 @@ class ImportJsonplaceholder:
                 "website": data["website"],
                 "company_id": company_id,
                 "address_id": address_id,
-                "api_id": data["id"]
+                "api_id": data["id"],
             }
 
             data_to_bulk_save["users"].append(user)
             data_to_bulk_save["companies"].append(company)
             data_to_bulk_save["address"].append(address)
-        
+
         self.company_repository.bulk_create(data_to_bulk_save["companies"])
         self.address_repository.bulk_create(data_to_bulk_save["address"])
         self.users_repository.bulk_create(data_to_bulk_save["users"])
-        
