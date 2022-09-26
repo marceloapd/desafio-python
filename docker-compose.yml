@@ -19,7 +19,7 @@ services:
     restart: on-failure:2
     env_file:
       - .env
-    command: bash -c "python -m server"
+    command: bash -c "alembic upgrade head & python -m server"
 
   db:
     container_name: desafio-python-postgres
