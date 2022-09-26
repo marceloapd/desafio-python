@@ -11,7 +11,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects.postgresql import UUID
 
 # revision identifiers, used by Alembic.
-revision = 'ff2a744a7e15'
+revision = "ff2a744a7e15"
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,7 +32,8 @@ def upgrade() -> None:
         ),
     )
 
-    op.create_unique_constraint("uq_api_id_company", "company", ['api_id'])
+    op.create_unique_constraint("uq_api_id_company", "company", ["api_id"])
+
 
 def downgrade() -> None:
     op.drop_table("company")
