@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends
 
 from ..dependencies.services import get_auth_service
-from ..services.auth import AuthService 
+from ..services.auth import AuthService
 
 router = APIRouter()
+
 
 @router.get(
     "/get-token",
