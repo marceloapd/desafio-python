@@ -84,7 +84,7 @@ Faça um programa que carregue a saída dessa URL e mostre os seguintes dados:
 
 ## 👷 Arquitetura
 
-![Featured_Image](https://user-images.githubusercontent.com/71731452/191395190-e2a83ced-fb8c-4229-b692-e16c6d9a4d7e.png)
+<img src="https://user-images.githubusercontent.com/71731452/192170155-9162b7b5-af8a-44b0-9580-ab35a74c1dd8.png" style="width:400px" alt="Arquitetura Geral">
 
 ## 🔩 Requisitos
 > Antes de começar, verifique se você atendeu aos seguintes requisitos:
@@ -102,10 +102,10 @@ cp env-sample .env
 > Você só precisa executar os contêineres com o docker compose
 
 ```
-docker compose up
+docker compose up --build
 ```
 
 ## 🧪 Testando
 > Use essa collection para testar no postman
 
-link of collection
+Collection link: https://www.getpostman.com/collections/7fcf093536f18a03685d
