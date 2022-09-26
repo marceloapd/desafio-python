@@ -25,8 +25,3 @@ async def seed_db_event():
     postgres = get_postgres_session()
     user = ImportJsonplaceholder(postgres)
     return user.get_jsonplaceholder(api_response.json())
-
-
-@app.get("/")
-def index():
-    return "Hello, world!"
