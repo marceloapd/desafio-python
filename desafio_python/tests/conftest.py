@@ -1,5 +1,7 @@
-from desafio_python.dependencies.databases import get_postgres_session
-
+from desafio_python.dependencies.databases import (
+    get_postgres_session, 
+    get_redis_client
+)
 from desafio_python.main import app
 from desafio_python.models.base import Base
 from fastapi.testclient import TestClient
@@ -9,9 +11,10 @@ from ..services.import_jsonplaceholder import ImportJsonplaceholder
 
 from pytest import fixture
 
-from ..helpers.tests import ENGINE, override_sqlite3_session
+from ..helpers.tests import ENGINE, override_sqlite3_session, override_redis_db
 
 app.dependency_overrides[get_postgres_session] = override_sqlite3_session
+app.dependency_overrides[get_redis_client] = override_redis_db
 
 
 @fixture
